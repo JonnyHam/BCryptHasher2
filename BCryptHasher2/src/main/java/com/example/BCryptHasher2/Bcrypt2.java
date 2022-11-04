@@ -2,8 +2,15 @@ package com.example.BCryptHasher2;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
 public class Bcrypt2 {
-    private String password = "thomas123";
+    private String password;
+    private String hashedPassword;
 
-    private String hashedPassword = BCrypt.hashpw((password, BCrypt.gensalt(10));
+    public Bcrypt2 (String p) {
+        password = p;
+    }
+
+    public String hasher () {
+        return BCrypt.hashpw(password, BCrypt.gensalt(10));
+    }
 
 }
